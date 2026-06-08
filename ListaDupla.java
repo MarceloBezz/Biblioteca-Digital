@@ -48,8 +48,10 @@ public class ListaDupla {
         
         Livro removido = primeiro.getAtual();
         NoDuplo segundo = primeiro.getProximo();
-        segundo.setAnterior(null);
-        primeiro = segundo;
+        if (segundo != null) {
+            segundo.setAnterior(null);
+            primeiro = segundo;
+        }
         tamanho--;
         return removido;
     }
