@@ -11,8 +11,14 @@ public class GestorEmprestimos {
             livro.setDisponivel(false);
             return;
         }
+        
+        if (fila == null) {
+            fila = new Fila<>();
+            hash.put(livro.getIsbn(), fila);
+        }
             
         fila.enfileira(u);
+
     }
 
     public void devolverLivro(Livro livro) {
